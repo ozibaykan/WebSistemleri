@@ -1,0 +1,50 @@
+﻿@model IEnumerable<musicData.Models.MusicData>
+
+@{
+    ViewBag.Title = "Listele";
+}
+
+<h2>Listele</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sanatci)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yapimci)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dinlenme)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sanatci)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Yapimci)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dinlenme)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
