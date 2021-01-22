@@ -1,0 +1,45 @@
+﻿@model IEnumerable<finalodev.Models.Muzik>
+
+@{
+    ViewBag.Title = "Listele";
+}
+
+<h2>Listele</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sanatciadi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sanatcisoyadi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sarki)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sanatciadi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sanatcisoyadi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sarki)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
